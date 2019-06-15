@@ -43,6 +43,9 @@
 #include "widgets/nuklearlabel.h"
 #include "widgets/nuklearcheckbox.h"
 #include "widgets/nukleargroup.h"
+#include "widgets/nuklearselectable.h"
+#include "widgets/nuklearslider.h"
+#include "widgets/nukleartextedit.h"
 
 #include "nuklearguiparser.h"
 

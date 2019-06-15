@@ -3,6 +3,8 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
+QMAKE_CXXFLAGS += -mwindows
+
 INCLUDEPATH += ../../src/
 
 SOURCES += \
@@ -24,7 +26,10 @@ SOURCES += \
     ../../src/platforms/win32/d3d9/nuklearbasewindowd3d9.cpp \
     ../../src/platforms/win32/gdi/nuklearbasewindowgdi.cpp \
     ../../src/platforms/win32/gdi/nukleargdiinput.cpp \
-    ../../src/platforms/win32/nuklearbasewindowwin32.cpp
+    ../../src/platforms/win32/nuklearbasewindowwin32.cpp \
+    ../../src/widgets/nuklearselectable.cpp \
+    ../../src/widgets/nuklearslider.cpp \
+    ../../src/widgets/nukleartextedit.cpp
 
 HEADERS += \
     testwindow.h \
@@ -48,6 +53,9 @@ HEADERS += \
     ../../src/platforms/win32/d3d9/nuklearbasewindowd3d9.h \
     ../../src/platforms/win32/gdi/nukleargdiinput.h \
     ../../src/platforms/win32/gdi/nuklearbasewindowgdi.h \
-    ../../src/platforms/win32/nuklearbasewindowwin32.h
+    ../../src/platforms/win32/nuklearbasewindowwin32.h \
+    ../../src/widgets/nuklearselectable.h \
+    ../../src/widgets/nuklearslider.h \
+    ../../src/widgets/nukleartextedit.h
 
 LIBS += -luser32 -lgdi32 -lMsimg32 -ld3d9

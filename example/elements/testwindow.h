@@ -11,6 +11,12 @@ public:
 
     void button1Clicked();
     void button2Clicked();
+
+    void texteditChanged();
+
+private:
+    NuklearLabel * testLabel;
+    NuklearTextEdit * testTextEdit;
 };
 
 #endif // TESTAPPLICATION_H

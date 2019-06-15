@@ -8,6 +8,9 @@
 #include "nuklearlayoutrowstatic.h"
 #include "nuklearcheckbox.h"
 #include "nukleargroup.h"
+#include "nuklearselectable.h"
+#include "nuklearslider.h"
+#include "nukleartextedit.h"
 
 namespace nkcpp
 {
@@ -76,6 +79,34 @@ namespace nkcpp
         NuklearGroup * g = new NuklearGroup( this->ctx );
         this->addChild(g);
         return g;
+    }
+
+    NuklearElement *NuklearElement::addSelectable(std::string text, bool active)
+    {
+        NuklearSelectable * sel = new NuklearSelectable( this->ctx );
+        sel->setText(text);
+        sel->setActive(active);
+        this->addChild(sel);
+        return sel;
+    }
+
+    NuklearElement *NuklearElement::addSlider(float min, float value, float max, float step)
+    {
+        NuklearSlider * slider = new NuklearSlider( this->ctx );
+        slider->setMax(max);
+        slider->setMin(min);
+        slider->setStep(step);
+        slider->setValue(value);
+        this->addChild(slider);
+        return slider;
+    }
+
+    NuklearElement *NuklearElement::addTextEdit(std::string text)
+    {
+        NuklearTextEdit * te = new NuklearTextEdit( this->ctx );
+        te->setText(text);
+        this->addChild(te);
+        return te;
     }
 
     unsigned int NuklearElement::childCount()

@@ -25,6 +25,9 @@ namespace nkcpp
         NuklearElement *addLayoutRowStatic(int height, int width, int cols);
         NuklearElement *addCheckbox(std::string text, bool active);
         NuklearElement *addGroup();
+        NuklearElement *addSelectable(std::string text, bool active);
+        NuklearElement *addSlider(float min, float value, float max, float step);
+        NuklearElement *addTextEdit(std::string text);
 
         unsigned int childCount();
         bool isVisible();

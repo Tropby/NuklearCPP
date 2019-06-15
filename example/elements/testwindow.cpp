@@ -26,12 +26,16 @@ TestWindow::TestWindow() : NuklearBaseWindowGDI( NK_NBWB_MULTI_WINDOW )
     l2->addButton("Test5", std::bind( &TestWindow::button1Clicked, this ));
 
     l2->addCheckbox("The Build!", true);
+    l2->addSlider(0, 50, 200, 5);
+    testTextEdit = static_cast<NuklearTextEdit*>(l2->addTextEdit("Change ME!"));
+    testTextEdit->setOnChange( std::bind( &TestWindow::texteditChanged, this ) );
 
     NuklearLayoutRowStatic * l3 = static_cast<NuklearLayoutRowStatic*>(nw->addLayoutRowStatic( 50, 100, 2 ));
     l3->addButton("Test _1_", std::bind( &TestWindow::button2Clicked, this ));
     l3->addButton("Test _2_", std::bind( &TestWindow::button1Clicked, this ));
     l3->addButton("Test _3_", std::bind( &TestWindow::button1Clicked, this ));
-    l3->addLabel("Ein Label");
+    testLabel = static_cast<NuklearLabel*>(l3->addLabel("Ein Label"));
+    l3->addSelectable("Klick MICH", true);
 
     NuklearLayoutRowDynamic * l4 = static_cast<NuklearLayoutRowDynamic*>(nw->addLayoutRowDynamic( 200, 1 ));
     NuklearGroup * g1 = static_cast<NuklearGroup*>(l4->addGroup() );
@@ -54,5 +58,10 @@ void TestWindow::button2Clicked()
 {
     std::cout << (int)this << "button2Clicked" << std::endl;
     this->resize(1024, 768);
+}
+
+void TestWindow::texteditChanged()
+{
+    testLabel->setText(testTextEdit->getText());
 }
 
