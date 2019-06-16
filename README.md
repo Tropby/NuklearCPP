@@ -4,7 +4,7 @@ The NuklearCPP is currently under developement. There are only some functions/wi
 
 # Basic Idea
 The basic idea was to create a easy to use C++ interface with callback function to the Nuklear GUI library. 
-To implement a window you have just du extent one of the BaseWindows that run the renderer. For example you  can 
+To implement a window you have to extent one of the BaseWindows that run the renderer. For example you  can 
 extent the NuklearBaseWindowGDI. To initialise the window just call *init();*.
 
 ```c++
@@ -22,11 +22,26 @@ TestWindow::TestWindow() : NuklearBaseWindowGDI( NK_NBWB_MULTI_WINDOW )
 }
 ```
 
+## The main
+The main have to create a instace of your window. Than the application have to be called. The exec method will start the event loop and will return if the window is closed.
+
+```c++
+#include "testwindow.h"
+
+int main(void)
+{
+    TestWindow app;
+    return NuklearCPPApplication::exec();
+}
+```
+
 ## Adding widgets
 
 First of all you need to add a new NuklearWindow by calling *addNuklearWindow();*. 
 This will give you a pointer to a NuklearWindow. By calling one of the add functions you can add widgets to the
-window. Attention: You need always a layout to add windgets to.
+window. 
+
+Attention: You need always a layout to add windgets to.
 
 ```c++
 NuklearWindow * nw = this->addNuklearWindow();
@@ -47,7 +62,8 @@ You may bind the callback function at the creation of the object.
 
 ...
 
-l3->addButton("Test _1_", std::bind( &TestWindow::button2Clicked, this ));
+NuklearButton * b1 = static_cast<NuklearButton*>(l3->addButton("Test _1_"));
+b1->setOnClick(NK_CPP_BIND(TestWindow, button1Clicked, this));
 ```
 
 The callback function is defined in the example below.
@@ -71,4 +87,7 @@ Currently the following widgets are supportet:
 - Label
 - Layout Row Dynamic
 - Layout Row Static
+- Selectable
+- Slider
+- Text Edit
 - Window
