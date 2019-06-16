@@ -2,7 +2,7 @@
 
 namespace nkcpp
 {
-    NuklearWindow::NuklearWindow(struct nk_context *ctx) : NuklearElement (ctx)
+    NuklearWindow::NuklearWindow(struct nk_context *ctx) : NuklearContainer (ctx)
     {
         x = 0;
         y = 0;
@@ -14,7 +14,7 @@ namespace nkcpp
     {
         if (nk_begin(ctx, text.c_str(), nk_rect(x, y, w, h), flags))
         {
-            NuklearElement::renderChilds();
+            NuklearContainer::renderChilds();
         }
         nk_end(ctx);
     }

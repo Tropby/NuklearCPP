@@ -1,7 +1,6 @@
 #ifndef NUKLEARSLIDER_H
 #define NUKLEARSLIDER_H
 
-
 #include <string>
 #include <functional>
 
@@ -26,11 +25,15 @@ namespace nkcpp
         float getMax();
         float getStep();
 
+        void setOnChange( NK_CPP_CALLBACK_FUNCTION callback );
+
     private:
         float value;
         float min;
         float max;
         float step;
+
+        NK_CPP_CALLBACK_FUNCTION onChange;
     };
 }
 

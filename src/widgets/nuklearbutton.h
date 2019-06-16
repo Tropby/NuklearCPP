@@ -22,7 +22,7 @@ namespace nkcpp
     private:
         std::string text;
 
-        std::function<void()> onClick;
+        NK_CPP_CALLBACK_FUNCTION onClick;
     };
 }
 #endif // NUKLEARBUTTON_H

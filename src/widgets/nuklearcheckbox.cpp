@@ -2,14 +2,18 @@
 
 namespace nkcpp
 {
-    NuklearCheckbox::NuklearCheckbox(nk_context *ctx) : NuklearElement (ctx), active(0)
+    NuklearCheckbox::NuklearCheckbox(nk_context *ctx) : NuklearElement (ctx), active(0), onChanged(nullptr)
     {
 
     }
 
     void NuklearCheckbox::render()
     {
-        nk_checkbox_label( this->ctx, text.c_str(), &active );
+        if( nk_checkbox_label( this->ctx, text.c_str(), &active ) )
+        {
+            if( onChanged )
+                onChanged(this);
+        }
     }
 
     void NuklearCheckbox::setText(std::string text)
@@ -25,5 +29,10 @@ namespace nkcpp
     void NuklearCheckbox::setActive(bool active)
     {
         this->active = ( active ? 1 : 0 );
+    }
+
+    void NuklearCheckbox::setOnChanged(NK_CPP_CALLBACK_FUNCTION onChagned)
+    {
+        this->onChanged = onChagned;
     }
 }

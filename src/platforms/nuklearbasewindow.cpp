@@ -15,7 +15,7 @@ namespace nkcpp
         begin();
         for( NuklearWindow * nw : nuklearWindows )
         {
-            nw->update();
+            nw->render();
         }
         end();
     }

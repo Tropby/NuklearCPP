@@ -1,11 +1,11 @@
 #ifndef NUKLEARLAYOUTROWSTATIC_H
 #define NUKLEARLAYOUTROWSTATIC_H
 
-#include "nuklearelement.h"
+#include "nuklearcontainer.h"
 
 namespace nkcpp
 {
-    class NuklearLayoutRowStatic : public NuklearElement
+    class NuklearLayoutRowStatic : public NuklearContainer
     {
     public:
         NuklearLayoutRowStatic(struct nk_context * ctx, int height, int width, int cols);

@@ -19,7 +19,7 @@ namespace nkcpp
         {
         case NK_EDIT_ACTIVE:
             if( onChange )
-                onChange();
+                onChange(this);
             break;
         case NK_EDIT_INACTIVE:
             break;
@@ -29,7 +29,7 @@ namespace nkcpp
             break;
         case NK_EDIT_COMMITED:
             if( onLostFocus )
-                onLostFocus();
+                onLostFocus(this);
             break;
         }
     }

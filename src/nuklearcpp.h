@@ -3,6 +3,8 @@
 
 #include "nuklearcppconfig.h"
 
+#define NK_CPP_BIND(x,y,z) std::bind( &x::y, z, std::placeholders::_1 )
+
 #ifdef NK_CPP_INCLUDE_GDI
     #define NK_INCLUDE_FIXED_TYPES
     #define NK_INCLUDE_STANDARD_IO

@@ -2,7 +2,7 @@
 
 namespace nkcpp
 {
-    NuklearLayoutRowStatic::NuklearLayoutRowStatic(nk_context *ctx, int height, int width, int cols) : NuklearElement (ctx)
+    NuklearLayoutRowStatic::NuklearLayoutRowStatic(nk_context *ctx, int height, int width, int cols) : NuklearContainer (ctx)
     {
         this->height = height;
         this->width = width;
@@ -12,6 +12,6 @@ namespace nkcpp
     void NuklearLayoutRowStatic::render()
     {
         nk_layout_row_static(ctx, this->height, this->width, this->cols);
-        NuklearElement::renderChilds();
+        NuklearContainer::renderChilds();
     }
 }

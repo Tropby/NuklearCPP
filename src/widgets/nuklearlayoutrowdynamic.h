@@ -1,11 +1,11 @@
 #ifndef NUKLEARLAYOUTROWDYNAMIC_H
 #define NUKLEARLAYOUTROWDYNAMIC_H
 
-#include "nuklearelement.h"
+#include "nuklearcontainer.h"
 
 namespace nkcpp
 {
-    class NuklearLayoutRowDynamic : public NuklearElement
+    class NuklearLayoutRowDynamic : public NuklearContainer
     {
     public:
         NuklearLayoutRowDynamic(struct nk_context * ctx, int height, int cols);

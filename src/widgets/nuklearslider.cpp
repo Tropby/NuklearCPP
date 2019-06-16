@@ -9,7 +9,11 @@ namespace nkcpp
 
     void NuklearSlider::render()
     {
-        nk_slider_float(ctx, min, &value, max, step);
+        if( nk_slider_float(ctx, min, &value, max, step) )
+        {
+            if( onChange )
+                onChange(this);
+        }
     }
 
     void NuklearSlider::setMin(float min)
@@ -50,5 +54,10 @@ namespace nkcpp
     float NuklearSlider::getStep()
     {
         return step;
+    }
+
+    void NuklearSlider::setOnChange(NK_CPP_CALLBACK_FUNCTION callback)
+    {
+        onChange = callback;
     }
 }

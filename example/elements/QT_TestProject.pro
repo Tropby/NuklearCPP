@@ -29,7 +29,8 @@ SOURCES += \
     ../../src/platforms/win32/nuklearbasewindowwin32.cpp \
     ../../src/widgets/nuklearselectable.cpp \
     ../../src/widgets/nuklearslider.cpp \
-    ../../src/widgets/nukleartextedit.cpp
+    ../../src/widgets/nukleartextedit.cpp \
+    ../../src/widgets/nuklearcontainer.cpp
 
 HEADERS += \
     testwindow.h \
@@ -56,6 +57,7 @@ HEADERS += \
     ../../src/platforms/win32/nuklearbasewindowwin32.h \
     ../../src/widgets/nuklearselectable.h \
     ../../src/widgets/nuklearslider.h \
-    ../../src/widgets/nukleartextedit.h
+    ../../src/widgets/nukleartextedit.h \
+    ../../src/widgets/nuklearcontainer.h
 
 LIBS += -luser32 -lgdi32 -lMsimg32 -ld3d9

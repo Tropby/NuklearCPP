@@ -2,7 +2,7 @@
 
 namespace nkcpp
 {
-    NuklearGroup::NuklearGroup(nk_context *ctx) : NuklearElement (ctx)
+    NuklearGroup::NuklearGroup(nk_context *ctx) : NuklearContainer (ctx)
     {
 
     }
@@ -11,7 +11,7 @@ namespace nkcpp
     {
         if( nk_group_begin(ctx, "", NK_WINDOW_BORDER) )
         {
-            NuklearElement::renderChilds();
+            NuklearContainer::renderChilds();
             nk_group_end(ctx);
         }
     }

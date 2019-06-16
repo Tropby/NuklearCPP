@@ -12,7 +12,7 @@ namespace nkcpp
         if (nk_button_label(this->ctx, this->text.c_str()))
         {
             if( onClick )
-                onClick();
+                onClick(this);
         }
     }
 

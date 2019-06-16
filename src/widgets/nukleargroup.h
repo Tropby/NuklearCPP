@@ -1,11 +1,11 @@
 #ifndef NUKLEARGROUP_H
 #define NUKLEARGROUP_H
 
-#include "nuklearelement.h"
+#include "nuklearcontainer.h"
 
 namespace nkcpp
 {
-    class NuklearGroup : public NuklearElement
+    class NuklearGroup : public NuklearContainer
     {
     public:
         NuklearGroup(struct nk_context * ctx);

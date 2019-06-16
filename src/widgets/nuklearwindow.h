@@ -2,11 +2,11 @@
 #define NUKLEARWINDOW_H
 
 #include <string>
-#include "nuklearelement.h"
+#include "nuklearcontainer.h"
 
 namespace nkcpp
 {
-    class NuklearWindow : public NuklearElement
+    class NuklearWindow : public NuklearContainer
     {
     public:
         NuklearWindow(struct ::nk_context * ctx);
