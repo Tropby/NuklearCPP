@@ -1,20 +1,9 @@
 include_directories(${CMAKE_CURRENT_LIST_DIR})
-set(NUKLEAR_CPP_SOURCE_FILES
-   ${CMAKE_CURRENT_LIST_DIR}/nuklearcpp.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/widgets/nuklearelement.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/widgets/nuklearbutton.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/widgets/nuklearwindow.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/widgets/nuklearlayoutrowdynamic.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/widgets/nuklearlayoutrowstatic.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/widgets/nuklearlabel.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/widgets/nuklearcheckbox.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/widgets/nukleargroup.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/nuklearguiparser.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/images/nuklearbitmap.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/nuklearcppapplication.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/platforms/nuklearbasewindow.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/platforms/win32/d3d9/nuklearbasewindowd3d9.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/platforms/win32/gdi/nuklearbasewindowgdi.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/platforms/win32/gdi/nukleargdiinput.cpp
-   ${CMAKE_CURRENT_LIST_DIR}/platforms/win32/nuklearbasewindowwin32.cpp
-)
+
+file(GLOB NUKLEAR_CPP_SOURCE_FILES "${CMAKE_CURRENT_LIST_DIR}/*.cpp")
+file(GLOB_RECURSE NUKLEAR_CPP_SOURCE_FILES_WIDGETS "${CMAKE_CURRENT_LIST_DIR}/widgets/*.cpp")
+file(GLOB_RECURSE NUKLEAR_CPP_SOURCE_FILES_PLATFORMS "${CMAKE_CURRENT_LIST_DIR}/platforms/*.cpp")
+file(GLOB_RECURSE NUKLEAR_CPP_SOURCE_FILES_IMAGES "${CMAKE_CURRENT_LIST_DIR}/images/*.cpp")
+
+set(NUKLEAR_CPP_SOURCE_FILES ${NUKLEAR_CPP_SOURCE_FILES} ${NUKLEAR_CPP_SOURCE_FILES_WIDGETS} ${NUKLEAR_CPP_SOURCE_FILES_PLATFORMS} ${NUKLEAR_CPP_SOURCE_FILES_IMAGES})
+

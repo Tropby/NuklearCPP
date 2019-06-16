@@ -9,8 +9,18 @@ class TestWindow : public NuklearBaseWindowGDI
 public:
     TestWindow();
 
-    void button1Clicked();
-    void button2Clicked();
+    void button1Clicked(NuklearElement * sender);
+    void button2Clicked(NuklearElement * sender);
+
+    void texteditChanged(NuklearElement * sender);
+    void checkboxChanged(NuklearElement * sender);
+    void selectableChanged(NuklearElement * sender);
+
+private:
+    NuklearLabel * testLabel;
+    NuklearTextEdit * testTextEdit;
+    NuklearCheckbox * testCheckbox;
+    NuklearSelectable * testSelectable;
 };
 
 #endif // TESTAPPLICATION_H

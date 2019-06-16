@@ -6,7 +6,7 @@ project(CMakeExample)
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/../../src/CMakeLists.txt)
 
-add_executable(${PROJECT_NAME} "main.cpp" "testwindow.cpp" ${NUKLEAR_CPP_SOURCE_FILES})
+add_executable(${PROJECT_NAME} ${NUKLEAR_CPP_SOURCE_FILES} "main.cpp" "testwindow.cpp")
 
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11 -mwindows -mthreads -DWIN32")
 target_link_libraries(${PROJECT_NAME} user32.lib gdi32.lib Msimg32.lib d3d9.dll)
