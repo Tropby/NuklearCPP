@@ -81,9 +81,9 @@ public:
 ```
 
 
-# Supportet Widgets
+# Widgets
 
-Currently the following widgets are supportet:
+Currently the following widgets are supported:
 - Button
 - Checkbox
 - Groupbox
