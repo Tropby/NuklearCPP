@@ -1,10 +1,13 @@
 # NuklearCPP
-Based on Nuklear, a signle-header ANSI C gui library, the NukllearCPP provides a C++ interface to the ANSI C functions. 
+Based on [Nuklear](https://github.com/vurtun/nuklear), a signle-header ANSI C gui library, the NukllearCPP provides a C++ interface to the ANSI C functions. 
 The NuklearCPP is currently under developement. There are only some functions/widgets working by now.
 
+Checkout the ANSI C library [Nuklear](https://github.com/vurtun/nuklear) more information.
+
+
 # Basic Idea
-The basic idea was to create a easy to use C++ interface with callback function to the Nuklear GUI library. 
-To implement a window you have to extent one of the BaseWindows that run the renderer. For example you  can 
+The basic idea behind NuklearCPP is, to create a easy to use C++ interface with callback function to the Nuklear GUI library. 
+To implement a window you have to extent one of the BaseWindows that run the renderer for you. For example you  can 
 extent the NuklearBaseWindowGDI. To initialise the window just call *init();*.
 
 ```c++
