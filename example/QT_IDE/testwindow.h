@@ -12,15 +12,19 @@ public:
     void button1Clicked(NuklearElement * sender);
     void button2Clicked(NuklearElement * sender);
 
+    void progressChanged(NuklearElement * sender);
+
     void texteditChanged(NuklearElement * sender);
     void checkboxChanged(NuklearElement * sender);
     void selectableChanged(NuklearElement * sender);
 
 private:
     NuklearLabel * testLabel;
-    NuklearTextEdit * testTextEdit;
+    NuklearTextEditLine * testTextEdit;
     NuklearCheckbox * testCheckbox;
     NuklearSelectable * testSelectable;
+
+    NuklearGUIParser gui;
 };
 
 #endif // TESTAPPLICATION_H

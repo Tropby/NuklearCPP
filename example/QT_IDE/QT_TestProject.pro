@@ -29,8 +29,12 @@ SOURCES += \
     ../../src/platforms/win32/nuklearbasewindowwin32.cpp \
     ../../src/widgets/nuklearselectable.cpp \
     ../../src/widgets/nuklearslider.cpp \
-    ../../src/widgets/nukleartextedit.cpp \
-    ../../src/widgets/nuklearcontainer.cpp
+    ../../src/widgets/nuklearcontainer.cpp \
+    ../../src/nuklearstringhelper.cpp \
+    ../../src/widgets/nuklearprogressbar.cpp \
+    ../../src/widgets/nuklearchart.cpp \
+    ../../src/widgets/nukleartexteditline.cpp \
+    ../../src/widgets/nuklearcombobox.cpp
 
 HEADERS += \
     testwindow.h \
@@ -57,7 +61,11 @@ HEADERS += \
     ../../src/platforms/win32/nuklearbasewindowwin32.h \
     ../../src/widgets/nuklearselectable.h \
     ../../src/widgets/nuklearslider.h \
-    ../../src/widgets/nukleartextedit.h \
-    ../../src/widgets/nuklearcontainer.h
+    ../../src/widgets/nuklearcontainer.h \
+    ../../src/nuklearstringhelper.h \
+    ../../src/widgets/nuklearprogressbar.h \
+    ../../src/widgets/nuklearchart.h \
+    ../../src/widgets/nukleartexteditline.h \
+    ../../src/widgets/nuklearcombobox.h
 
 LIBS += -luser32 -lgdi32 -lMsimg32 -ld3d9

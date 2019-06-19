@@ -17,6 +17,9 @@ namespace nkcpp
         void hide();
         void show();
 
+        void setName( std::string name );
+        std::string getName();
+
         virtual void render() = 0;
 
     protected:
@@ -24,6 +27,7 @@ namespace nkcpp
 
     private:
         bool visible;
+        std::string name;
 
     };
 

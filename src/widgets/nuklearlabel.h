@@ -1,9 +1,6 @@
 #ifndef NUKLEARLABEL_H
 #define NUKLEARLABEL_H
 
-#include <string>
-#include <functional>
-
 #include "nuklearelement.h"
 
 namespace nkcpp

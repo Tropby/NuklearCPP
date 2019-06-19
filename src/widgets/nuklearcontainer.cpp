@@ -8,7 +8,9 @@
 #include "nukleargroup.h"
 #include "nuklearselectable.h"
 #include "nuklearslider.h"
-#include "nukleartextedit.h"
+#include "nukleartexteditline.h"
+#include "nuklearprogressbar.h"
+#include "nuklearchart.h"
 
 namespace nkcpp
 {
@@ -90,10 +92,28 @@ namespace nkcpp
 
     NuklearElement *NuklearContainer::addTextEdit(std::string text)
     {
-        NuklearTextEdit * te = new NuklearTextEdit( this->ctx );
+        NuklearTextEditLine * te = new NuklearTextEditLine( this->ctx );
         te->setText(text);
         this->addChild(te);
         return te;
+    }
+
+    NuklearElement *NuklearContainer::addProgressBar(unsigned int value, unsigned int max, bool isModifyable)
+    {
+        NuklearProgressBar * pb = new NuklearProgressBar( this->ctx );
+        pb->setMax(max);
+        pb->setValue(value);
+        pb->setModifyable(isModifyable);
+        this->addChild(pb);
+        return pb;
+    }
+
+    NuklearElement *NuklearContainer::addChart(nk_chart_type chartType)
+    {
+        NuklearChart * nc = new NuklearChart(this->ctx);
+        nc->setChartType(chartType);
+        this->addChild(nc);
+        return nc;
     }
 
     unsigned int NuklearContainer::childCount()

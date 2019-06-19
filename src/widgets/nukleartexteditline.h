@@ -8,20 +8,24 @@
 
 namespace nkcpp
 {
-    class NuklearTextEdit : public NuklearElement
+    class NuklearTextEditLine : public NuklearElement
     {
     public:
-        NuklearTextEdit(struct nk_context * ctx);
+        NuklearTextEditLine(struct nk_context * ctx);
         void render();
         void setText( std::string text );
         std::string getText();
+
         void setOnChange( NK_CPP_CALLBACK_FUNCTION onChange );
         void setOnLostFocus( NK_CPP_CALLBACK_FUNCTION onLostFocus );
+        void setReadonly( bool readonly );
+        bool isReadonly();
 
     private:
         std::string text;
         char buffer[1024];
 
+        bool readonly;
         NK_CPP_CALLBACK_FUNCTION onChange;
         NK_CPP_CALLBACK_FUNCTION onLostFocus;
 

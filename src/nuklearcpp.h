@@ -47,7 +47,9 @@
 #include "widgets/nukleargroup.h"
 #include "widgets/nuklearselectable.h"
 #include "widgets/nuklearslider.h"
-#include "widgets/nukleartextedit.h"
+#include "widgets/nukleartexteditline.h"
+#include "widgets/nuklearprogressbar.h"
+#include "widgets/nuklearchart.h"
 
 #include "nuklearguiparser.h"
 

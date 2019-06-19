@@ -26,4 +26,14 @@ namespace nkcpp
     {
         visible = true;
     }
+
+    void NuklearElement::setName(std::string name)
+    {
+        this->name = name;
+    }
+
+    std::string NuklearElement::getName()
+    {
+        return name;
+    }
 }
