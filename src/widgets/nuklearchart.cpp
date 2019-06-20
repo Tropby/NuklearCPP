@@ -43,7 +43,5 @@ namespace nkcpp
             c = s - offset;
 
         nk_plot(ctx, chartType, values.data(), c, o);
-
-        //nk_label( ctx, this->text.c_str(), NK_TEXT_LEFT);
     }
 }

@@ -12,7 +12,7 @@ namespace nkcpp
 
     void NuklearWindow::render()
     {
-        if (nk_begin(ctx, text.c_str(), nk_rect(x, y, w, h), flags))
+        if (nk_begin(ctx, text.c_str(), nk_rect(x, y, w, h), getFlags()))
         {
             NuklearContainer::renderChilds();
         }
@@ -30,25 +30,5 @@ namespace nkcpp
     void NuklearWindow::setText(std::string text)
     {
         this->text = text;
-    }
-
-    void NuklearWindow::setFlags(nk_flags flags)
-    {
-        this->flags = flags;
-    }
-
-    nk_flags NuklearWindow::getFlags()
-    {
-        return this->flags;
-    }
-
-    void NuklearWindow::addFlags(nk_flags flags)
-    {
-        this->flags |= flags;
-    }
-
-    void NuklearWindow::removeFlags(nk_flags flags)
-    {
-        this->flags &= ~flags;
     }
 }

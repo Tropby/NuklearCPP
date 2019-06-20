@@ -17,16 +17,9 @@ namespace nkcpp
 
         void setText( std::string text );
 
-        void setFlags( nk_flags flags );
-        nk_flags getFlags();
-        void addFlags( nk_flags flags );
-        void removeFlags( nk_flags flags );
-
     private:
         std::string text;
         int x, y, w, h;
-
-        nk_flags flags;
     };
 }
 #endif // NUKLEARWINDOW_H
