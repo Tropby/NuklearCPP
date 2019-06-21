@@ -4,6 +4,7 @@ The NuklearCPP is currently under developement. There are only some functions/wi
 
 Checkout the ANSI C library [Nuklear](https://github.com/vurtun/nuklear) more information.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/h8etcp6152pc5u6v/branch/master?svg=true)](https://ci.appveyor.com/project/Tropby/nuklearcpp/branch/master)
 
 # Basic Idea
 The basic idea behind NuklearCPP is, to create a easy to use C++ interface with callback function to the Nuklear GUI library. 
