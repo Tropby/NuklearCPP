@@ -24,9 +24,7 @@ namespace nkcpp
         void setOnChanged( NK_CPP_CALLBACK_FUNCTION onChagned );
     private:
         std::string text;
-
         int active;
-
         NK_CPP_CALLBACK_FUNCTION onChanged;
     };
 }

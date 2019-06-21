@@ -36,4 +36,25 @@ namespace nkcpp
     {
         return name;
     }
+
+    void NuklearElement::setFlags(nk_flags flags)
+    {
+        this->flags = flags;
+    }
+
+    nk_flags NuklearElement::getFlags()
+    {
+        return this->flags;
+    }
+
+    void NuklearElement::addFlags(nk_flags flags)
+    {
+        this->flags |= flags;
+    }
+
+    void NuklearElement::removeFlags(nk_flags flags)
+    {
+        this->flags &= ~flags;
+    }
+
 }
