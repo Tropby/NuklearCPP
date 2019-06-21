@@ -34,7 +34,7 @@ SOURCES += \
     ../../src/widgets/nuklearprogressbar.cpp \
     ../../src/widgets/nuklearchart.cpp \
     ../../src/widgets/nukleartexteditline.cpp \
-    ../../src/widgets/nuklearcombobox.cpp
+    ../../src/widgets/nukleartree.cpp
 
 HEADERS += \
     testwindow.h \
@@ -66,6 +66,6 @@ HEADERS += \
     ../../src/widgets/nuklearprogressbar.h \
     ../../src/widgets/nuklearchart.h \
     ../../src/widgets/nukleartexteditline.h \
-    ../../src/widgets/nuklearcombobox.h
+    ../../src/widgets/nukleartree.h
 
 LIBS += -luser32 -lgdi32 -lMsimg32 -ld3d9
