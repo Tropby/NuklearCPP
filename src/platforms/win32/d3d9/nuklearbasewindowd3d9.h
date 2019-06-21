@@ -4,6 +4,7 @@
 #include "../../../nuklearcppconfig.h"
 #ifdef NK_CPP_INCLUDE_D3D9
 
+#define COBJMACROS
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 #include <d3d9.h>
