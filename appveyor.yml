@@ -8,7 +8,7 @@ branches:
     
 install:
   - set QTDIR=C:\Qt\5.12.2\mingw73_32
-  - set PATH=%PATH%;%QTDIR%\bin;C:\MinGW\bin
+  - set PATH=%PATH%;%QTDIR%\bin;C:\mingw-w64\x86_64-7.2.0-posix-seh-rt_v5-rev1\bin
   - git submodule update --init --recursive
 build_script:
   - cd example\QT_IDE
