@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 QMAKE_CXXFLAGS += -mwindows
+QMAKE_LFLAGS += -static -static-libgcc -static-libstdc++ -lstdc++ -lwinpthread
 
 INCLUDEPATH += ../../src/
 

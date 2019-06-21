@@ -30,7 +30,7 @@ TestWindow::TestWindow() : NuklearBaseWindowGDI( NK_NBWB_MULTI_WINDOW )
     testCheckbox->setOnChanged(NK_CPP_BIND(TestWindow, checkboxChanged, this ));
 
     l2->addSlider(0, 50, 200, 5);
-    testTextEdit = static_cast<NuklearTextEdit*>(l2->addTextEdit("Change ME!"));
+    testTextEdit = static_cast<NuklearTextEditLine*>(l2->addTextEdit("Change ME!"));
     testTextEdit->setOnChange(NK_CPP_BIND(TestWindow, texteditChanged, this ) );
 
     NuklearLayoutRowStatic * l3 = static_cast<NuklearLayoutRowStatic*>(nw->addLayoutRowStatic( 50, 100, 2 ));

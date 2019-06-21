@@ -1,4 +1,4 @@
-#include <stdarg.h>
+
 #include "testwindow.h"
 
 int main(void)
