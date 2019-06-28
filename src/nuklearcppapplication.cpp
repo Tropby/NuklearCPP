@@ -13,23 +13,28 @@ namespace nkcpp
 
     int NuklearCPPApplication::exec()
     {
-        NuklearCPPApplication * i = getInstace();
-
         int running = 1;
         while( running )
         {
-            running = 0;
-            for( NuklearBaseWindow *bw : i->windows )
-            {
-                if( bw->isRunning() )
-                {
-                    bw->update();
-                    running += 1;
-                }
-            }
+            running = processEvents();
         }
 
         return 0;
+    }
+
+    int NuklearCPPApplication::processEvents()
+    {
+        int running = 0;
+        NuklearCPPApplication * i = getInstace();
+        for( NuklearBaseWindow *bw : i->windows )
+        {
+            if( bw->isRunning() )
+            {
+                bw->update();
+                running += 1;
+            }
+        }
+        return running;
     }
 
     void NuklearCPPApplication::registerBaseWindow(NuklearBaseWindow *bw)

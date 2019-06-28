@@ -26,11 +26,12 @@ namespace nkcpp
         bool closed();
 
         void resize( int width, int height );
+        void centerWindow();
 
     protected:
         void begin();
         void end();
-        void init();
+        void init(std::string fontName = "Arial", int fontSize = 14);
 
     private:
         /* GDI Handle */

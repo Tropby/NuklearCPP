@@ -32,7 +32,7 @@ namespace nkcpp
         return nw;
     }
 
-    void NuklearBaseWindow::init()
+    void NuklearBaseWindow::init(std::string fontName, int fontSize)
     {
 
     }
