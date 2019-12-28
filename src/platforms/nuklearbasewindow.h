@@ -30,7 +30,7 @@ namespace nkcpp
     protected:
         virtual void begin() = 0;
         virtual void end() = 0;
-        virtual void init();
+        virtual void init( std::string fontName = "Arial", int fontSize = 14 );
         virtual bool closed() = 0;
 
         nk_context * ctx;

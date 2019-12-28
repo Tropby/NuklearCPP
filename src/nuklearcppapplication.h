@@ -23,6 +23,7 @@ namespace nkcpp
     public:
         static NuklearCPPApplication *getInstace();
         static int exec();
+        static int processEvents();
 
         static void registerBaseWindow( NuklearBaseWindow * bw );
     private:

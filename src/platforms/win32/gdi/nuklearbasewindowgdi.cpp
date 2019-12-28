@@ -35,7 +35,7 @@ namespace nkcpp
         nk_gdi_render(nk_rgb(30,30,30));
     }
 
-    void NuklearBaseWindowGDI::init()
+    void NuklearBaseWindowGDI::init(std::string fontName, int fontSize)
     {
         ATOM atom;
         RECT rect = { 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT };
@@ -66,7 +66,7 @@ namespace nkcpp
         dc = GetDC(wnd);
 
         /* GUI */
-        font = nk_gdifont_create("Arial", 14);        
+        font = nk_gdifont_create(fontName.c_str(), fontSize);
 
         ctx = nk_gdi_init(font, dc, WINDOW_WIDTH, WINDOW_HEIGHT);
 
@@ -79,6 +79,14 @@ namespace nkcpp
     {
         switch (msg)
         {
+        case WM_CREATE:
+        {
+          HINSTANCE hInstance = ((LPCREATESTRUCT)lparam)->hInstance;
+          HICON hIcon = LoadIconA(hInstance, "IDI_ICON1");
+          SendMessage (wnd, WM_SETICON, ICON_BIG, (LPARAM)hIcon);
+          return 0;
+        }
+
         case WM_DESTROY:
             PostQuitMessage(0);
             return 0;
@@ -123,6 +131,18 @@ namespace nkcpp
             for( NuklearWindow * nw : nuklearWindows )
                nw->resize(0,0,width,height);
         }
+    }
+
+    void NuklearBaseWindowGDI::centerWindow()
+    {
+        RECT rc;
+
+        GetWindowRect ( this->wnd, &rc ) ;
+
+        int xPos = (GetSystemMetrics(SM_CXSCREEN) - rc.right)/2;
+        int yPos = (GetSystemMetrics(SM_CYSCREEN) - rc.bottom)/2;
+
+        SetWindowPos( this->wnd, nullptr, xPos, yPos, 0, 0, SWP_NOZORDER | SWP_NOSIZE );
     }
 }
 #endif

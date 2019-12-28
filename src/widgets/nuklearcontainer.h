@@ -3,7 +3,7 @@
 
 #include "nuklearelement.h"
 
-
+#include <vector>
 
 namespace nkcpp
 {
@@ -22,9 +22,11 @@ namespace nkcpp
         NuklearElement *addProgressBar(unsigned int value, unsigned int max, bool isModifyable);
         NuklearElement *addChart( nk_chart_type chartType );
 
-        NuklearContainer *addLayoutRowDynamic(int height, int cols);
+        NuklearContainer *addLayoutRowDynamic(int height, int colCount);
+        NuklearContainer *addLayoutRowDynamic(int height, std::vector<float> cols );
         NuklearContainer *addLayoutRowStatic(int height, int width, int cols);
         NuklearContainer *addGroup();
+        NuklearContainer *addTree(std::string text);
 
         unsigned int childCount();
         void renderChilds();

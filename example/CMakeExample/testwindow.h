@@ -18,7 +18,7 @@ public:
 
 private:
     NuklearLabel * testLabel;
-    NuklearTextEdit * testTextEdit;
+    NuklearTextEditLine * testTextEdit;
     NuklearCheckbox * testCheckbox;
     NuklearSelectable * testSelectable;
 };

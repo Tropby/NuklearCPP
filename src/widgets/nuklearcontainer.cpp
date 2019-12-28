@@ -11,6 +11,7 @@
 #include "nukleartexteditline.h"
 #include "nuklearprogressbar.h"
 #include "nuklearchart.h"
+#include "nukleartree.h"
 
 namespace nkcpp
 {
@@ -40,7 +41,14 @@ namespace nkcpp
         return label;
     }
 
-    NuklearContainer *NuklearContainer::addLayoutRowDynamic(int height, int cols)
+    NuklearContainer *NuklearContainer::addLayoutRowDynamic(int height, int colCount)
+    {
+        NuklearLayoutRowDynamic * row = new NuklearLayoutRowDynamic( this->ctx, height, colCount );
+        this->addChild(row);
+        return row;
+    }
+
+    NuklearContainer *NuklearContainer::addLayoutRowDynamic(int height, std::vector<float> cols)
     {
         NuklearLayoutRowDynamic * row = new NuklearLayoutRowDynamic( this->ctx, height, cols );
         this->addChild(row);
@@ -68,6 +76,14 @@ namespace nkcpp
         NuklearGroup * g = new NuklearGroup( this->ctx );
         this->addChild(g);
         return g;
+    }
+
+    NuklearContainer *NuklearContainer::addTree(std::string text)
+    {
+        NuklearTree * tree = new NuklearTree( this->ctx );
+        tree->setText(text);
+        this->addChild(tree);
+        return tree;
     }
 
     NuklearElement *NuklearContainer::addSelectable(std::string text, bool active)

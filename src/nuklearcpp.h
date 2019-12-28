@@ -50,6 +50,7 @@
 #include "widgets/nukleartexteditline.h"
 #include "widgets/nuklearprogressbar.h"
 #include "widgets/nuklearchart.h"
+#include "widgets/nukleartree.h"
 
 #include "nuklearguiparser.h"
 
