@@ -1,4 +1,3 @@
-
 #include "nuklearcppconfig.h"
 #include "nuklearcpp.h"
 
